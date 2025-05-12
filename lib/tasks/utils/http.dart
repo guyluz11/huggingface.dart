@@ -16,9 +16,11 @@ class HTTPService {
     while (retryCount < maxRetries) {
       try {
         final Map<String, String> headers = {
-          "Authorization": "Bearer $accessToken",
           "Content-Type": "application/json",
         };
+      if(accessToken!=null){
+        headers.addEntries([MapEntry("Authorization", "Bearer $accessToken")]);
+      }
 
         String endpointUrl = "$apiUrl/$model";
 

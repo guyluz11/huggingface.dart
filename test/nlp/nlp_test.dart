@@ -10,7 +10,7 @@ void main() async {
 
     setUp(() {
       String? accessToken = '${env['HF_API_TOKEN']}';
-      hfInference = HfInference(accessToken);
+      hfInference = HfInference(accessToken: accessToken);
     });
 
     test('Translate list of inputs', () async {

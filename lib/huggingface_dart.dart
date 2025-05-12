@@ -4,10 +4,10 @@ import 'dart:core';
 import 'package:huggingface_dart/tasks/nlp.dart';
 
 class HfInference {
-  final String? accessToken;
+  final String accessToken;
   final NLPTasks nlpTasks;
 
-  HfInference(this.accessToken) : nlpTasks = NLPTasks(accessToken);
+  HfInference({required this.accessToken}) : nlpTasks = NLPTasks(accessToken);
 
   // NLP APIs
 
